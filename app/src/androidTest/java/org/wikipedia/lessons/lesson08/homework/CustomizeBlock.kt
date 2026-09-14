@@ -6,12 +6,13 @@ import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
-class CustomizeBlock(matcher: Matcher<View>) : KRecyclerItem<CustomizeBlock>(matcher) {
+class WikipediaGames(matcher: Matcher<View>) : KRecyclerItem<WikipediaGames>(matcher) {
     val blockHeader = KTextView (matcher){
         withId(R.id.view_card_header_title)
+        withText("Wikipedia games")
     }
     val dots = KImageView (matcher){
-        withId(R.id.view_list_card_header_menu)
+        withIndex(0){withId(R.id.view_list_card_header_menu)}
     }
     val textHeader = KTextView (matcher) {
         withId(R.id.viewWikiGamesCardTitle)

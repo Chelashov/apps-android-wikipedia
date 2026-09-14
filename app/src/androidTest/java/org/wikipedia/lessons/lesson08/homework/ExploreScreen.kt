@@ -19,7 +19,10 @@ object ExploreScreen: KScreen<ExploreScreen>() {
             withId(R.id.feed_view)
         },
         itemTypeBuilder = {
-            itemType (::CustomizeBlock)
+            itemType (::WikipediaGames)
+            itemType (:: DateBlock)
+            itemType(:: TopRead)
+            itemType(:: InTheNews)
         }
     )
 }

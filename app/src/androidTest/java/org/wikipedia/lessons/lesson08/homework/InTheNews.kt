@@ -1,6 +1,7 @@
 package org.wikipedia.lessons.lesson08.homework
 
 import android.view.View
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
@@ -14,15 +15,15 @@ class InTheNews(matcher: Matcher<View>) : KRecyclerItem<InTheNews>(matcher) {
         withText("In the news")
     }
     val dots = KImageView(matcher){
+        withIndex(0){
         withId(R.id.view_list_card_header_menu)
+        }
     }
-    val image = KImageView(matcher){
-        withId(R.id.horizontal_scroll_list_item_image)
-    }
-    val text = KTextView(matcher){
-        withId(R.id.horizontal_scroll_list_item_text)
-    }
-//    val recycler = KRecyclerView(matcher){
-//
-//    }
+    val items = KRecyclerView(
+        parent = matcher,
+        builder = {withId(R.id.news_cardview_recycler_view)},
+        itemTypeBuilder = {
+            itemType (::InTheNewsRecycler)
+        }
+    )
 }
