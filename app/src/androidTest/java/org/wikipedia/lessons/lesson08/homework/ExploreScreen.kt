@@ -5,6 +5,8 @@ import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import org.wikipedia.R
 import org.wikipedia.feed.view.FeedView
+import org.wikipedia.lessons.lesson09.homework.Customize
+import org.wikipedia.lessons.lesson09.homework.FeaturedArticle
 
 
 object ExploreScreen: KScreen<ExploreScreen>() {
@@ -23,6 +25,8 @@ object ExploreScreen: KScreen<ExploreScreen>() {
             itemType (:: DateBlock)
             itemType(:: TopRead)
             itemType(:: InTheNews)
+            itemType(::FeaturedArticle)
+            itemType(::Customize)
         }
     )
 }
